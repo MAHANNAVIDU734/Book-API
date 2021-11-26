@@ -1,4 +1,4 @@
-/Requirements for our project
+//Requirements for our project
 
 //Book management company
 
@@ -15,10 +15,10 @@
 
 //BOOKS
 //WE NEED AN API FOR
-//-> to get all books
-//-> to get specific book
-//-> to get a list of books based on category
-//-> to get a list of books based on languages
+//-> to get all books - DONE
+//-> to get specific book - DONE
+//-> to get a list of books based on category - DONE
+//-> to get a list of books based on languages - ASSIGNMENT
 
 //AUTHORS
 //WE NEED AN API FOR
@@ -27,7 +27,7 @@
 //-> to get a list of authors based on books
 
 //PUBLICATIONS
-//WE NEED AN API FOR 
+//WE NEED AN API FOR
 //-> to get all publications
 //-> to get specific publication
 //-> to get a list of publications based on book
