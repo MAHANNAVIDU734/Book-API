@@ -138,7 +138,7 @@ Methods         POST
 booky.post("/book/new", async(req, res) => {
     const { newBook } = req.body;
     const addNewBook = BookModel.create(newBook)
-    return res.json({ books: addNewBook, message: "Bok was added!" });
+    return res.json({ books: addNewBook, message: "Book was added!" });
 });
 
 //ADD NEW AUTHORS
