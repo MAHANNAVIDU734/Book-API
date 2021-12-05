@@ -86,7 +86,7 @@ Access          Public
 Parameter       languages
 Methods         GET
 */
-booky.get("/c/:languages", async(req, res) => {
+booky.get("/l/:languages", async(req, res) => {
 
     const getSpecificBook = await BookModel.findOne({ languages: req.params.languages });
     //If no specific book is returned the , the findne func returns null, and to execute the not
@@ -129,6 +129,27 @@ booky.get("/author/book/:isbn", async(req, res) => {
     if (!getSpecificAuthor) {
         return res.json({
             error: `No author found for isbn of ${req.params.isbn}`
+        });
+    }
+
+    return res.json({ authors: getSpecificAuthor });
+});
+
+//GET ALL AUTHORS BASED ON A BOOK
+/*
+Route           /author/book/
+Description     Get all authors based on book
+Access          Public
+Parameter       author
+Methods         GET
+*/
+
+booky.get("/author/book/:author", async(req, res) => {
+    const getSpecificAuthor = await AuthorModel.findOne({ books: req.params.author });
+
+    if (!getSpecificAuthor) {
+        return res.json({
+            error: `No author found for isbn of ${req.params.author}`
         });
     }
 
