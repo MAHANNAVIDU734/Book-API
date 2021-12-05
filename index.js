@@ -185,7 +185,7 @@ booky.get("/publications/book/:isbn", async(req, res) => {
         });
     }
 
-    return res.json({ authors: getSpecificPublication });
+    return res.json({ publication: getSpecificPublication });
 });
 // to get a list of publications based on book
 /*
@@ -196,14 +196,14 @@ Parameter       books
 Methods         GET
 */
 booky.get("/publications/book/:books", async(req, res) => {
-    const getAllBooks = await PublicationModel.findOne({ publications: req.params.books });
-    if (!getAllBooks) {
+    const getSpecificPublication = await PublicationModel.findOne({ publications: req.params.books });
+    if (!getSpecificPublication) {
         return res.json({
             error: `No Publication found for books of ${req.params.books}`
         });
     }
 
-    return res.json({ authors: getSpecificPublication });
+    return res.json({ pubication: getSpecificPublication });
 });
 //ADD NEW BOOKS
 /*
