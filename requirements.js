@@ -29,7 +29,7 @@
 //PUBLICATIONS
 //WE NEED AN API FOR
 //-> to get all publications - DONE
-//-> to get specific publication - ASSIGNMENT
+//-> to get specific publication - DONE
 //-> to get a list of publications based on book - ASSIGNMENT
 
 //POST REQUEST

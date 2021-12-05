@@ -135,7 +135,7 @@ booky.get("/author/book/:isbn", async(req, res) => {
     return res.json({ authors: getSpecificAuthor });
 });
 
-//GET ALL AUTHORS BASED ON A BOOK
+//GET specific AUTHORS BASED ON A BOOK
 /*
 Route           /author/book/
 Description     Get all authors based on book
@@ -169,7 +169,24 @@ booky.get("/publications", (req, res) => {
     const getAllPublications = PublicationModel.find();
     return res.json(getAllPublications);
 });
+//get specific publication
+/*
+Route           /publications
+Description     Get specific publication
+Access          Public
+Parameter       NONE
+Methods         GET
+*/
+booky.get("/publications/book/:isbn", async(req, res) => {
+    const getSpecificPublication = await PublicationModel.findOne({ books: req.params.isbn });
+    if (!getSpecificPublication) {
+        return res.json({
+            error: `No Publication found for isbn of ${req.params.isbn}`
+        });
+    }
 
+    return res.json({ authors: getSpecificPublication });
+});
 //ADD NEW BOOKS
 /*
 Route           /book/new
