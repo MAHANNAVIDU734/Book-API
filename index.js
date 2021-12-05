@@ -174,7 +174,7 @@ booky.get("/publications", (req, res) => {
 Route           /publications
 Description     Get specific publication
 Access          Public
-Parameter       NONE
+Parameter       isbn
 Methods         GET
 */
 booky.get("/publications/book/:isbn", async(req, res) => {
@@ -182,6 +182,24 @@ booky.get("/publications/book/:isbn", async(req, res) => {
     if (!getSpecificPublication) {
         return res.json({
             error: `No Publication found for isbn of ${req.params.isbn}`
+        });
+    }
+
+    return res.json({ authors: getSpecificPublication });
+});
+// to get a list of publications based on book
+/*
+Route           /publications
+Description     Get all books of publication
+Access          Public
+Parameter       books
+Methods         GET
+*/
+booky.get("/publications/book/:books", async(req, res) => {
+    const getAllBooks = await PublicationModel.findOne({ publications: req.params.books });
+    if (!getAllBooks) {
+        return res.json({
+            error: `No Publication found for books of ${req.params.books}`
         });
     }
 
