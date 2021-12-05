@@ -29,8 +29,8 @@
 //PUBLICATIONS
 //WE NEED AN API FOR
 //-> to get all publications - DONE
-//-> to get specific publication - DONE
-//-> to get a list of publications based on book - ASSIGNMENT
+//-> to get specific publication - DONE_ME
+//-> to get a list of publications based on book - DONE_ME
 
 //POST REQUEST
 //-> Add new books - DONE
