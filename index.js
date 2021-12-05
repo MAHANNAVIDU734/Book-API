@@ -203,7 +203,7 @@ booky.get("/publications/book/:books", async(req, res) => {
         });
     }
 
-    return res.json({ pubication: getSpecificPublication });
+    return res.json({ publication: getSpecificPublication });
 });
 //ADD NEW BOOKS
 /*
